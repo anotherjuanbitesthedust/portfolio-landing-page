@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 2rem;
+        }
+        
+        .exercise {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0.25rem;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #2563eb;
+        }
+        
+        input, textarea {
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            margin: 0.25rem;
+        }
+        
+        .highlight {
+            background: yellow !important;
+            color: black !important;
+            padding: 0.25rem;
+            border-radius: 3px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .task-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        
+        #colorBox {
+            width: 100px;
+            height: 100px;
+            background: #3b82f6;
+            margin: 1rem 0;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .counter {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Day 2: DOM Manipulation Practice</h1>
+    
+    <!-- Exercise 1: Basic Element Selection and Modification -->
+    <div class="container">
+        <h2>Exercise 1: Element Selection & Modification</h2>
+        <div class="exercise">
+            <h3 id="title">Original Title</h3>
+            <p class="description">This is the original description.</p>
+            <button onclick="changeContent()">Change Content</button>
+            <button onclick="addHighlight()">Toggle Highlight</button>
+        </div>
+    </div>
+    
+    <!-- Exercise 2: Dynamic List Creation -->
+    <div class="container">
+        <h2>Exercise 2: Dynamic Task List</h2>
+        <div class="exercise">
+            <input type="text" id="taskInput" placeholder="Enter a new task">
+            <button onclick="addTask()">Add Task</button>
+            <button onclick="clearCompleted()">Clear Completed</button>
+            <div id="taskList"></div>
+        </div>
+    </div>
+    
+    <!-- Exercise 3: Interactive Color Changer -->
+    <div class="container">
+        <h2>Exercise 3: Interactive Elements</h2>
+        <div class="exercise">
+            <div id="colorBox"></div>
+            <button onclick="randomColor()">Random Color</button>
+            <button onclick="resetColor()">Reset Color</button>
+            <input type="color" id="colorPicker" onchange="customColor()">
+        </div>
+    </div>
+    
+    <!-- Exercise 4: Counter with Event Listeners -->
+    <div class="container">
+        <h2>Exercise 4: Counter App</h2>
+        <div class="exercise">
+            <div class="counter" id="counterDisplay">0</div>
+            <button id="incrementBtn">+</button>
+            <button id="decrementBtn">-</button>
+            <button id="resetBtn">Reset</button>
+            <input type="number" id="stepInput" value="1" min="1" style="width: 60px;">
+        </div>
+    </div>
+    
+    <!-- Exercise 5: Form Validation -->
+    <div class="container">
+        <h2>Exercise 5: Form Validation</h2>
+        <div class="exercise">
+            <form id="contactForm">
+                <div>
+                    <input type="text" id="nameInput" placeholder="Your Name" required>
+                    <span id="nameError" style="color: #ff6b6b;"></span>
+                </div>
+                <div>
+                    <input type="email" id="emailInput" placeholder="Your Email" required>
+                    <span id="emailError" style="color: #ff6b6b;"></span>
+                </div>
+                <div>
+                    <textarea id="messageInput" placeholder="Your Message" required></textarea>
+                    <span id="messageError" style="color: #ff6b6b;"></span>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="formSuccess" class="hidden" style="color: #4ade80;">
+                Form submitted successfully!
+            </div>
+        </div>
+    </div>
+    
+    <!-- Exercise 6: Image Gallery -->
+    <div class="container">
+        <h2>Exercise 6: Image Gallery Simulation</h2>
+        <div class="exercise">
+            <div id="gallery"></div>
+            <button onclick="loadGallery()">Load Images</button>
+            <button onclick="clearGallery()">Clear Gallery</button>
+        </div>
+    </div>
+
+    <script src="dom-practice.js"></script>
+</body>
+</html>

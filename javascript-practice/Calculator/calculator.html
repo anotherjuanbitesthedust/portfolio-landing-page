@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+
+        .calculator {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .calculator-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .calculator-header h1 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        .display {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            text-align: right;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .previous-operation {
+            font-size: 1rem;
+            opacity: 0.6;
+            height: 1.5rem;
+            overflow: hidden;
+        }
+
+        .current-operation {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: white;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        button {
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            height: 60px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-number {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .btn-number:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-number:active {
+            transform: translateY(0);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-operator {
+            background: rgba(59, 130, 246, 0.3);
+            color: white;
+        }
+
+        .btn-operator:hover {
+            background: rgba(59, 130, 246, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-operator:active {
+            transform: translateY(0);
+            background: rgba(59, 130, 246, 0.7);
+        }
+
+        .btn-operator.active {
+            background: rgba(59, 130, 246, 0.8);
+            transform: scale(0.95);
+        }
+
+        .btn-clear {
+            background: rgba(239, 68, 68, 0.3);
+            color: white;
+        }
+
+        .btn-clear:hover {
+            background: rgba(239, 68, 68, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-clear:active {
+            transform: translateY(0);
+            background: rgba(239, 68, 68, 0.7);
+        }
+
+        .btn-equals {
+            background: rgba(34, 197, 94, 0.3);
+            color: white;
+        }
+
+        .btn-equals:hover {
+            background: rgba(34, 197, 94, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-equals:active {
+            transform: translateY(0);
+            background: rgba(34, 197, 94, 0.7);
+        }
+
+        .btn-zero {
+            grid-column: span 2;
+        }
+
+        .error {
+            color: #ff6b6b !important;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 20%, 40%, 60%, 80% {
+                transform: translateX(0);
+            }
+            10%, 30%, 50%, 70%, 90% {
+                transform: translateX(-5px);
+            }
+        }
+
+        .keyboard-hint {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .calculator {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .current-operation {
+                font-size: 2rem;
+            }
+            
+            button {
+                height: 50px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculator-header">
+            <h1>JavaScript Calculator</h1>
+        </div>
+        
+        <div class="display">
+            <div class="previous-operation" id="previousOperation"></div>
+            <div class="current-operation" id="currentOperation">0</div>
+        </div>
+        
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button class="btn-clear" onclick="clearAll()">AC</button>
+            <button class="btn-clear" onclick="clearEntry()">CE</button>
+            <button class="btn-clear" onclick="backspace()">⌫</button>
+            <button class="btn-operator" onclick="setOperation('÷')" data-operation="÷">÷</button>
+            
+            <!-- Row 2 -->
+            <button class="btn-number" onclick="appendNumber('7')">7</button>
+            <button class="btn-number" onclick="appendNumber('8')">8</button>
+            <button class="btn-number" onclick="appendNumber('9')">9</button>
+            <button class="btn-operator" onclick="setOperation('×')" data-operation="×">×</button>
+            
+            <!-- Row 3 -->
+            <button class="btn-number" onclick="appendNumber('4')">4</button>
+            <button class="btn-number" onclick="appendNumber('5')">5</button>
+            <button class="btn-number" onclick="appendNumber('6')">6</button>
+            <button class="btn-operator" onclick="setOperation('-')" data-operation="-">-</button>
+            
+            <!-- Row 4 -->
+            <button class="btn-number" onclick="appendNumber('1')">1</button>
+            <button class="btn-number" onclick="appendNumber('2')">2</button>
+            <button class="btn-number" onclick="appendNumber('3')">3</button>
+            <button class="btn-operator" onclick="setOperation('+')" data-operation="+">+</button>
+            
+            <!-- Row 5 -->
+            <button class="btn-number btn-zero" onclick="appendNumber('0')">0</button>
+            <button class="btn-number" onclick="appendDecimal()">.</button>
+            <button class="btn-equals" onclick="calculate()">=</button>
+        </div>
+        
+        <div class="keyboard-hint">
+            💡 Tip: You can use your keyboard! Try typing numbers and +, -, *, /, Enter, Escape
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
