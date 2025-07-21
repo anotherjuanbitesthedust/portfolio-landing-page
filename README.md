@@ -8,6 +8,7 @@ A fully responsive portfolio landing page showcasing my frontend development jou
 - Mobile-first responsive design
 - Professional layout with hero, about, skills, and contact sections
 - Smooth animations and hover effects
+- Created a JavaScript Calculator and added that to project 1 in my portfolio website
 
 ## Technologies Used
 - HTML5 (Semantic elements, accessibility features)
@@ -32,7 +33,7 @@ View the site: [Open with Live Server in VS Code]
 
 ## Progress
 - ✅Portfolio Landing Page
-- ⏳JavaScript Fundamentals
+- ✅JavaScript Fundamentals
 - ⏳React Introduction
 - ⏳First React Project
 
