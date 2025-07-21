@@ -37,4 +37,4 @@ View the site: [Open with Live Server in VS Code]
 - ⏳First React Project
 
 ## Screenshots
-[Add screenshots here tomorrow]
+![Desktop Screenshot](ScreenshotDay1.png)
