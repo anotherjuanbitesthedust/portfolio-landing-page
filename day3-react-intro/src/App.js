@@ -3,13 +3,16 @@ import GreetingCard from './GreetingCard';
 import JSXExamples from './JSXExamples';
 import SkillCounter from './SkillCounter';
 import ProjectCard from './ProjectCard';
+import InteractiveCounter from './InteractiveCounter';
+import LiveInput from './LiveInput';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>🚀 Day 3: React Introduction</h1>
-        <p>Mastering props and component communication!</p>
+        <p>Mastering STATE and interactive components!</p>
         
         {/* Greeting Cards */}
         <GreetingCard 
@@ -82,6 +85,17 @@ function App() {
             progress={15}
           />
         </div>
+
+         <GreetingCard 
+          name="State Master" 
+          skill="useState Hook" 
+          experience="Building interactive UIs"
+          date={new Date().toDateString()} 
+        />
+
+          {/* NEW: Interactive State Components */}
+        <InteractiveCounter />
+        <LiveInput />
         
         {/* JSX Examples */}
         <JSXExamples />
