@@ -2,13 +2,14 @@
 
 A fully responsive portfolio landing page showcasing my frontend development journey.
 
-## What I Built Today
+## What I Built So Far
 - Semantic HTML5 structure
 - Complete CSS styling with modern techniques
 - Mobile-first responsive design
 - Professional layout with hero, about, skills, and contact sections
 - Smooth animations and hover effects
 - Created a JavaScript Calculator and added that to project 1 in my portfolio website
+- Created a React Project with multiple different dashboards and progress trackers using Component, Props, JSX
 
 ## Technologies Used
 - HTML5 (Semantic elements, accessibility features)
