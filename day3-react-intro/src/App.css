@@ -1,0 +1,317 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.App-header h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.App-header p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+
+.greeting-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  max-width: 500px;
+}
+
+.greeting-card:hover {
+  transform: translateY(-5px);
+}
+
+.greeting-card h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.greeting-card p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.date {
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 1rem !important;
+  font-size: 0.9rem;
+}
+
+.jsx-examples {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 600px;
+  text-align: left;
+}
+
+.jsx-examples h3, .jsx-examples h4 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.jsx-examples p, .jsx-examples li {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.progress-section, .skills-section, .stats-section, .interactive-section, .motivation-section {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.learning-badge, .achievement-badge {
+  background: rgba(34, 197, 94, 0.3);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+.achievement-badge {
+  background: rgba(251, 191, 36, 0.3);
+  border: 1px solid rgba(251, 191, 36, 0.5);
+}
+
+.skill-item {
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.jsx-button {
+  background: rgba(59, 130, 246, 0.3);
+  color: white;
+  border: 1px solid rgba(59, 130, 246, 0.5);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.jsx-button:hover {
+  background: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.jsx-button:active {
+  transform: translateY(0);
+}
+
+/* SkillCounter Styles */
+.skill-counter {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 400px;
+}
+
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.skill-icon {
+  font-size: 1.5rem;
+}
+
+.skill-header h4 {
+  color: white;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.level-bar {
+  background: rgba(255, 255, 255, 0.2);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.level-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.level-text {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.skill-description p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.skill-description small {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+}
+
+.mastery-badge, .intermediate-badge, .beginner-badge {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.mastery-badge {
+  background: rgba(251, 191, 36, 0.3);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.5);
+}
+
+.intermediate-badge {
+  background: rgba(59, 130, 246, 0.3);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.5);
+}
+
+.beginner-badge {
+  background: rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+/* ProjectCard Styles */
+.project-card-component {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 450px;
+}
+
+.project-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.completed {
+  background: rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+}
+
+.status-badge.in-progress {
+  background: rgba(0, 1, 2, 0.3);
+  color: #a0a1a3;
+  border: 1px solid rgba(21, 85, 189, 0.5);
+}
+
+.difficulty-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: white;
+}
+
+.project-title {
+  color: white;
+  margin: 0 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.project-details p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.completed-section, .in-progress-section {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.view-project-btn {
+  background: rgba(34, 197, 94, 0.3);
+  color: white;
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.view-project-btn:hover {
+  background: rgba(34, 197, 94, 0.5);
+  transform: translateY(-2px);
+}
+
+.progress-bar {
+  background: rgba(255, 255, 255, 0.2);
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.progress-fill {
+  background: #2461c4;
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 3px;
+}
