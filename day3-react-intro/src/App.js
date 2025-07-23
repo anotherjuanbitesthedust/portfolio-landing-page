@@ -5,7 +5,7 @@ import SkillCounter from './SkillCounter';
 import ProjectCard from './ProjectCard';
 import InteractiveCounter from './InteractiveCounter';
 import LiveInput from './LiveInput';
-
+import TodoApp from './TodoApp';
 
 function App() {
   return (
@@ -96,6 +96,9 @@ function App() {
           {/* NEW: Interactive State Components */}
         <InteractiveCounter />
         <LiveInput />
+         
+          {/* Complete Todo Application */}
+        <TodoApp />
         
         {/* JSX Examples */}
         <JSXExamples />
